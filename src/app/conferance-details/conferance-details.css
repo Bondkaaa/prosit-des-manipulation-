@@ -1,0 +1,19 @@
+.details {
+	width: min(90%, 720px);
+	margin: 40px auto;
+	padding: 24px;
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.details h1 {
+	margin-top: 0;
+	text-transform: capitalize;
+}
+
+.details a {
+	display: inline-block;
+	margin-top: 16px;
+	color: #4f46e5;
+}
