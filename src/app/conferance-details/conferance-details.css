@@ -1,19 +1,61 @@
 .details {
-	width: min(90%, 720px);
-	margin: 40px auto;
-	padding: 24px;
-	background: white;
-	border-radius: 8px;
-	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: min(90%, 48rem);
+  margin: 2.5rem auto;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 2rem rgb(25 27 55 / 10%);
 }
 
 .details h1 {
-	margin-top: 0;
-	text-transform: capitalize;
+  margin: 0.5rem 0 1rem;
+  color: #1b1b31;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-transform: capitalize;
 }
 
-.details a {
-	display: inline-block;
-	margin-top: 16px;
-	color: #4f46e5;
+.back-link {
+  display: inline-block;
+  color: #353982;
+  font-weight: 700;
+}
+
+.eyebrow {
+  margin: 2rem 0 0;
+  color: #5256bd;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.description {
+  color: #4f5264;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.event-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+}
+
+.event-facts div {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #f3f3fb;
+}
+
+.event-facts dt {
+  color: #4f5264;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.event-facts dd {
+  margin: 0.35rem 0 0;
+  color: #1b1b31;
+  font-weight: 700;
 }

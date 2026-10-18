@@ -1,13 +1,24 @@
 @if (conferance; as conf) {
-	<main class="details">
-		<h1>{{ conf.name }}</h1>
-		<p><strong>Date:</strong> {{ conf.date }}</p>
-		<p><strong>Place:</strong> {{ conf.place }}</p>
-		<a routerLink="/list">Back to conferences</a>
-	</main>
+  <main class="details">
+    <a class="back-link" routerLink="/list">← All conferences</a>
+    <p class="eyebrow">Conference details</p>
+    <h1>{{ conf.name }}</h1>
+    <p class="description">{{ conf.description }}</p>
+    <dl class="event-facts">
+      <div>
+        <dt>Date</dt>
+        <dd><time [attr.datetime]="conf.date">{{ conf.date | date: 'longDate' }}</time></dd>
+      </div>
+      <div>
+        <dt>City</dt>
+        <dd>{{ conf.place }}</dd>
+      </div>
+    </dl>
+  </main>
 } @else {
-	<main class="details">
-		<h1>Conference not found</h1>
-		<a routerLink="/list">Back to conferences</a>
-	</main>
+  <main class="details">
+    <h1>Conference not found</h1>
+    <p>The event may have been removed or the link may be incorrect.</p>
+    <a class="back-link" routerLink="/list">Browse all conferences</a>
+  </main>
 }
