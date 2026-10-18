@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CONFERANCES } from './conferances';
 
 @Component({
   selector: 'app-conferance-list',
-  imports: [RouterLink],
+  imports: [NgOptimizedImage, RouterLink],
   templateUrl: './conferance-list.html',
   styleUrl: './conferance-list.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
