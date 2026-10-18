@@ -20,15 +20,6 @@
       <option [value]="place">{{ place }}</option>
     }
   </select>
-  <label for="conference-sort">Sort by date</label>
-  <select
-    id="conference-sort"
-    [value]="sortOrder()"
-    (change)="updateSortOrder($event)"
-  >
-    <option value="soonest">Soonest first</option>
-    <option value="latest">Latest first</option>
-  </select>
 </div>
 
 <p class="result-count" aria-live="polite">

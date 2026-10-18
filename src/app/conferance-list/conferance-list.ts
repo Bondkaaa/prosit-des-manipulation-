@@ -12,13 +12,12 @@ import { CONFERANCES } from './conferances';
 export class ConferanceList {
   readonly searchTerm = signal('');
   readonly selectedPlace = signal('all');
-  readonly sortOrder = signal<'soonest' | 'latest'>('soonest');
   readonly places = [...new Set(CONFERANCES.map((conference) => conference.place))].sort();
   readonly conferances = computed(() => {
     const term = this.searchTerm().trim().toLocaleLowerCase();
     const selectedPlace = this.selectedPlace();
 
-    const matches = CONFERANCES.filter((conference) => {
+    return CONFERANCES.filter((conference) => {
       const matchesPlace = selectedPlace === 'all' || conference.place === selectedPlace;
       const matchesSearch =
         !term ||
@@ -27,8 +26,6 @@ export class ConferanceList {
         );
       return matchesPlace && matchesSearch;
     });
-    const direction = this.sortOrder() === 'soonest' ? 1 : -1;
-    return matches.sort((first, second) => direction * first.date.localeCompare(second.date));
   });
 
   updateSearchTerm(event: Event): void {
@@ -40,12 +37,6 @@ export class ConferanceList {
   updatePlaceFilter(event: Event): void {
     if (event.target instanceof HTMLSelectElement) {
       this.selectedPlace.set(event.target.value);
-    }
-  }
-
-  updateSortOrder(event: Event): void {
-    if (event.target instanceof HTMLSelectElement) {
-      this.sortOrder.set(event.target.value === 'latest' ? 'latest' : 'soonest');
     }
   }
 }
