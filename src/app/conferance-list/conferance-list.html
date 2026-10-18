@@ -1,7 +1,22 @@
 <h1>Conferences</h1>
 
+<div class="catalog-controls">
+  <label for="conference-search">Search by event, city, or topic</label>
+  <input
+    id="conference-search"
+    type="search"
+    [value]="searchTerm()"
+    (input)="updateSearchTerm($event)"
+    placeholder="Try Angular or Tunis"
+  />
+</div>
+
+<p class="result-count" aria-live="polite">
+  {{ conferances().length }} {{ conferances().length === 1 ? 'conference' : 'conferences' }} found
+</p>
+
 <div class="cards-container">
-  @for (conf of conferances; track conf.id) {
+  @for (conf of conferances(); track conf.id) {
     <div class="card">
 
       <img
@@ -18,5 +33,7 @@
       </div>
 
     </div>
+  } @empty {
+    <p class="empty-state">No conferences match your search. Try another event, city, or topic.</p>
   }
 </div>
