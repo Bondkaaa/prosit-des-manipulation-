@@ -1,14 +1,12 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CONFERANCES } from '../conferance-list/conferances';
 
 @Component({
   selector: 'app-conferance-details',
-  imports: [DatePipe, RouterLink],
+  imports: [RouterLink],
   templateUrl: './conferance-details.html',
   styleUrl: './conferance-details.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConferanceDetails {
   private readonly route = inject(ActivatedRoute);
