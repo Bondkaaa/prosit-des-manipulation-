@@ -9,17 +9,6 @@
     (input)="updateSearchTerm($event)"
     placeholder="Try Angular or Tunis"
   />
-  <label for="conference-place">Filter by city</label>
-  <select
-    id="conference-place"
-    [value]="selectedPlace()"
-    (change)="updatePlaceFilter($event)"
-  >
-    <option value="all">All cities</option>
-    @for (place of places; track place) {
-      <option [value]="place">{{ place }}</option>
-    }
-  </select>
 </div>
 
 <p class="result-count" aria-live="polite">
