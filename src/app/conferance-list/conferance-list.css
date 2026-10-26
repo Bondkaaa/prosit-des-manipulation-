@@ -51,22 +51,37 @@ h1 {
   margin: 10px 0;
 }
 
-.details-button {
-  display: block;
-  margin-top: 15px;
-  text-align: center;
+.card button {
+  flex: 1;
   padding: 12px;
-  text-decoration: none;
+
   border: none;
   border-radius: 8px;
+
   background: #6366f1;
   color: white;
+
   font-size: 15px;
   font-weight: bold;
+
   cursor: pointer;
   transition: background 0.3s;
 }
 
-.details-button:hover {
+.card-actions {
+  display: flex;
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+
+.card button.delete-button {
+  background: #dc2626;
+}
+
+.card button.delete-button:hover {
+  background: #b91c1c;
+}
+
+.card button:hover {
   background: #4f46e5;
 }

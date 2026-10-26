@@ -1,7 +1,11 @@
 <h1>Conferences</h1>
 
+@if (errorMessage()) {
+  <p role="alert">{{ errorMessage() }}</p>
+}
+
 <div class="cards-container">
-  @for (conf of conferances; track conf.id) {
+  @for (conf of conferances(); track conf.id) {
     <div class="card">
 
       <img
@@ -13,10 +17,14 @@
         <h2>{{ conf.name }}</h2>
 
         <p>📅 {{ conf.date }}</p>
-        <p>📍 {{ conf.place }}</p>
-        <a class="details-button" [routerLink]="['/details', conf.id]">View details</a>
-      </div>
+        <p>📍 {{ conf.location }}</p>
 
+      </div>
+      <div class="card-actions">
+        <button type="button" [routerLink]="['/details', conf.id]">Details</button>
+        <button type="button" [routerLink]="['/update', conf.id]">Modifier</button>
+        <button type="button" class="delete-button" (click)="deleteConferance(conf.id)">Supprimer</button>
+      </div>
     </div>
   }
 </div>
